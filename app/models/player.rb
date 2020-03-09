@@ -53,8 +53,6 @@ class Player < ApplicationRecord
   end
 
   def total_year_projection(projections)
-    projections.sum do |proj|
-      proj[:projection]
-    end
+    projections.sum {|proj| proj[:projection]}
   end
 end

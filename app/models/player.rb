@@ -31,11 +31,7 @@ class Player < ApplicationRecord
   end
 
   def self.search_position(position)
-    if position == 'all'
-      all
-    else
-      where(position: position)
-    end
+    position == 'all' ? all : where(position: position)
   end
 
   def self.current_top_6(position)
